@@ -1,0 +1,42 @@
+
+
+<div class=" w-75 my-5 mx-auto abs">
+    <label class="fw-bold text-success mt-5 mb-2"> Search</label>
+    <input [(ngModel)]="inputValue" class="form-control">
+
+  </div>
+<div class="row">
+    <div *ngFor="let product of allProducts | search :inputValue | paginate: { id: 'productPaginate',
+    itemsPerPage: pageSize,
+    currentPage: currentPage,
+    totalItems: totalItems } "  class="col-md-2">
+        <div class="product my-3 cursor-pointer">
+          <div [routerLink]="['/productDetails', product._id]" >
+            <img [src]="product.imageCover" class="w-100">
+            <span class="fa-sm text-main">{{product.category.name}}</span>
+            <h1 class="h5 fw-bold"> {{product.title.split(" ").slice(0,2).join(" ")}}</h1>
+
+            <div class="d-flex justify-content-between">
+                <span>{{product.price}}EGP</span>
+                <span><i class="fa-solid fa-star rating-color"></i> {{product.ratingsAverage}}</span>
+            </div>
+          </div>
+            <button (click)="addCartBtn(product._id)" class="btn bg-main d-block w-100 text-white">Add </button>
+        </div>
+    </div>
+
+
+    <pagination-controls class="text-center mt-3"  id="productPaginate"
+                      (pageChange)="pageChanged($event)"
+                      (pageBoundsCorrection)="pageChanged($event)"
+                      [maxSize]="9"
+                      [directionLinks]="true"
+                      [autoHide]="true"
+                      [responsive]="true"
+                      previousLabel="Previous"
+                      nextLabel="Next"
+                      screenReaderPaginationLabel="Pagination"
+                      screenReaderPageLabel="page"
+                      screenReaderCurrentLabel="You're on page">
+</pagination-controls>
+</div>

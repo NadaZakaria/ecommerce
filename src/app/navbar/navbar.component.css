@@ -1,0 +1,12 @@
+.num{
+    position: absolute;
+    top: -12px;
+    left: 0px;
+    background-color:lightgray;
+    font-size: 9px;
+    
+}
+
+nav{
+    transition: padding 1s;
+}

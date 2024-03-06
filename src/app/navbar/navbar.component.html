@@ -1,0 +1,40 @@
+<nav #navBar class="navbar navbar-expand-lg bg-body-tertiary fixed-top py-3">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/images/freshcart-logo.svg" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a  *ngIf="isLogin" class="nav-link" routerLink="home" routerLinkActive="text-white bg-main rounded-pill">Home</a>
+          <a  *ngIf="isLogin" class="nav-link" routerLink="brands" routerLinkActive="text-white bg-main rounded-pill">Brands</a>
+          <a  *ngIf="isLogin" class="nav-link" routerLink="categories" routerLinkActive="text-white bg-main rounded-pill">Categories</a>
+          <a  *ngIf="isLogin" class="nav-link" routerLink="cart"routerLinkActive="text-white bg-main rounded-pill">Cart</a>
+          <a  *ngIf="isLogin" class="nav-link"  routerLink="products" routerLinkActive="text-white bg-main rounded-pill">Products</a>
+        </div>
+        <div class="d-flex gap-3">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-behance"></i>
+            <i class="fa-brands fa-linkedin"></i>
+
+            <a class="nav-link position-relative"> 
+                <i routerLink="wishlist" class="fa-solid fa-heart  cursor-pointer text-danger ">
+                </i>
+            </a>
+
+            <a class="nav-link position-relative"> 
+            <i routerLink="cart" class="fa-solid fa-cart-shopping cursor-pointer text-main ">
+              <span class="badge text-black num ">{{cartNumber}}</span>
+            </i></a>
+
+            <a  *ngIf="!isLogin" class="nav-link" routerLink="login">Login</a>
+            <a  *ngIf="!isLogin" class="nav-link" routerLink="register">Register</a>
+            <a  *ngIf="isLogin" (click)="logout()" class="nav-link cursor-pointer">Logout</a>
+            <a  *ngIf="isLogin"  routerLink="settings" class="nav-link cursor-pointer">settings </a>
+        </div>
+      </div>
+    </div>
+  </nav>

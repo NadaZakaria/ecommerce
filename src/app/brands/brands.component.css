@@ -1,0 +1,10 @@
+.brand{
+    margin-top: 50px;
+}
+.new:hover{
+    box-shadow: 1px 1px 5px 1px green;
+}
+
+.new{
+    transition: all 0.7s;
+}

@@ -1,0 +1,32 @@
+<div class="row my-5 align-items-center">
+    <div class="col-md-3">
+       
+
+  <owl-carousel-o [options]="customOptions">
+
+    <ng-container *ngFor="let slide of oneProduct?.images">
+      <ng-template carouselSlide>
+        <img [src]="slide">
+      </ng-template>
+    </ng-container>
+
+  </owl-carousel-o>
+
+
+    </div>
+    <div class="col-md-9">
+        <h1 class="h4">{{oneProduct.title}}</h1>
+        <h1 class="h6">{{oneProduct.description}}</h1>
+
+
+        <span class="fa-sm text-main">{{oneProduct.category.name}}</span>
+
+        <div class="d-flex justify-content-between">
+            <span>{{oneProduct.price}}EGP</span>
+            <span><i  [class.rating-color]="oneProduct.ratingsAverage >=num" *ngFor="let num of[1,2,3,4,5]" class="fa-solid fa-star"></i> {{oneProduct.ratingsAverage}}</span>
+        </div>
+      
+        <button (click)="addCartBtn(oneProduct._id)" class="btn bg-main d-block w-100 text-white mt-2">Add To Cart</button>
+    </div>
+
+</div>
