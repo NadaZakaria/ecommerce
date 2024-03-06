@@ -37,6 +37,8 @@ export class RegisterComponent {
       },
 
       error: (err)=>{
+        console.log(err);
+        
         this.errorMassage = err.error.message
         this.isLoading = false
       }

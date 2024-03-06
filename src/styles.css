@@ -17,6 +17,10 @@ body {
     color: var(--rating-color);
 }
 
+.mainSlider{
+    margin-top: 100px!important;
+}
+
 .cursor-pointer {
     cursor: pointer;
 }

@@ -1,6 +1,6 @@
 
 
-<div class="w-75 my-5 mx-auto">
+<div class="w-75 my-5 mx-auto mainSlider">
     <h2 class="text-main">Register Now</h2>
 
     <h5 *ngIf="errorMassage" class="alert alert-danger text-center">{{errorMassage}}</h5>
@@ -25,7 +25,7 @@
         </div>
         <div class="mb-3">
             <label>password:</label>
-            <input formControlName="password" class="form-control">
+            <input type="password" formControlName="password" class="form-control">
 
             <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched " class="alert alert-danger">
                 <p *ngIf="registerForm.get('password')?.errors?.['required']" >password is required</p>
@@ -34,7 +34,7 @@
         </div>
         <div class="mb-3">
             <label>rePassword:</label>
-            <input formControlName="rePassword"class="form-control">
+            <input type="password" formControlName="rePassword"class="form-control">
 
             <div *ngIf="registerForm.get('rePassword')?.errors && registerForm.get('rePassword')?.touched " class="alert alert-danger">
                 <p *ngIf="registerForm.get('rePassword')?.errors?.['required']" >rePassword is required</p>
